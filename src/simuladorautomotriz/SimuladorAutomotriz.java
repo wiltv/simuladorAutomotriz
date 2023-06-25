@@ -4,6 +4,8 @@
  */
 package simuladorautomotriz;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  *
  * @author wiltsson
@@ -13,7 +15,7 @@ public class SimuladorAutomotriz {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         
        
         
@@ -35,12 +37,26 @@ public class SimuladorAutomotriz {
             count++;
         }
         
-        String Nv1 = colaNv1.PrintCola();
-        System.out.println(Nv1);
-        String Nv2 = colaNv2.PrintCola();
-        System.out.println(Nv2);
-        String Nv3 = colaNv3.PrintCola();
-        System.out.println(Nv3);
+        String Nv11 = colaNv1.PrintCola();
+       
+        
+        while (1==1){
+            System.out.println(Nv11);
+            IA ia = new IA();
+            ia.resultado(colaNv1);
+
+            String Nv1 = colaNv1.PrintCola();
+            System.out.println(Nv1);
+            String Nv2 = colaNv2.PrintCola();
+            System.out.println(Nv2);
+            String Nv3 = colaNv3.PrintCola();
+            System.out.println(Nv3);
+            System.out.println(" ");
+            TimeUnit.MILLISECONDS.sleep(2000);
+            
+        }
+        
+        
         
         
         
