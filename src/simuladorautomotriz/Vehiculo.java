@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package simuladorautomotriz;
-
+import java.util.Random;
 /**
  *
  * @author wiltsson
@@ -12,10 +12,44 @@ public class Vehiculo {
     private Vehiculo next;
     private int ID;
     private int prioridad;
+    private int contador;
     
-    public Vehiculo(int ID, int prioridad) {
+    
+    public int Prioridad() {
+        int prioridad = 0;
+        Random random = new Random(); 
+        int carroceria = random.nextInt(100); 
+        if (carroceria>=60){ //Carroceria
+            prioridad++;
+        }
+        int chasis = random.nextInt(100); 
+        if (chasis>=70){ //Chasis
+            prioridad++;
+        }
+        int motor = random.nextInt(100); 
+        if (motor>=50){ //Motor
+            prioridad++;
+        }
+        int rueda = random.nextInt(100); 
+        if (rueda>=40){ //Rueda
+            prioridad++;
+        }
+        
+        if(prioridad<2){
+            prioridad = 3;
+        }else if(prioridad==2){
+            prioridad = 2;
+        }else{
+            prioridad = 1;
+        }
+        return prioridad;
+    }
+    
+    
+    public Vehiculo(int ID) {
         this.ID = ID;
-        this.prioridad = prioridad;
+        this.prioridad = this.Prioridad();
+        this.contador = 0;
     }
     
     public Vehiculo getNext() {

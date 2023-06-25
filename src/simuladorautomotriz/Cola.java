@@ -28,13 +28,12 @@ public class Cola {
     }
     
     
-    public void Encolar(int ID, int prioridad) {
-        Vehiculo newVehiculo = new Vehiculo(ID, prioridad);
+    public void Encolar(Vehiculo vehiculo) {
         if (this.esVacia()) {
-            this.head = this.tail = newVehiculo;
+            this.head = this.tail = vehiculo;
         } else {
-            this.tail.setNext(newVehiculo);
-            this.tail = newVehiculo;
+            this.tail.setNext(vehiculo);
+            this.tail = vehiculo;
         }
         size++;
     }

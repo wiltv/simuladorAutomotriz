@@ -15,16 +15,38 @@ public class SimuladorAutomotriz {
      */
     public static void main(String[] args) {
         
-        Vehiculo vehiculo1 = new Vehiculo(1, 1);
-        Vehiculo vehiculo2 = new Vehiculo(2,1);
+       
         
-        Cola cola = new Cola();
-        cola.Encolar(1, 1);
-        cola.Encolar(2, 1);
-        cola.Encolar(5, 2);
+        Cola colaNv1 = new Cola();
+        Cola colaNv2 = new Cola();
+        Cola colaNv3 = new Cola();
+        Cola refuerzo = new Cola();
         
-        String print = cola.PrintCola();
-        System.out.println(print);
+        int count = 0;
+        while(count<10){
+            Vehiculo vehiculo = new Vehiculo(count+1);
+            if (vehiculo.getPrioridad()==1){
+                colaNv1.Encolar(vehiculo);
+            }else if(vehiculo.getPrioridad()==2){
+                colaNv2.Encolar(vehiculo);
+            }else{
+                colaNv3.Encolar(vehiculo);
+            }
+            count++;
+        }
+        
+        String Nv1 = colaNv1.PrintCola();
+        System.out.println(Nv1);
+        String Nv2 = colaNv2.PrintCola();
+        System.out.println(Nv2);
+        String Nv3 = colaNv3.PrintCola();
+        System.out.println(Nv3);
+        
+        
+        
+        
+        
+        
         
         
         
