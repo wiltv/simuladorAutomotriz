@@ -24,7 +24,11 @@ public class Cola {
     }
     
     public boolean esVacia() {
-        return head == null;
+        if (head == null){
+            return true;
+        }else{
+            return false;
+        }
     }
     
     

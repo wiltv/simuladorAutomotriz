@@ -37,21 +37,34 @@ public class SimuladorAutomotriz {
             count++;
         }
         
-        String Nv11 = colaNv1.PrintCola();
-       
         
-        while (1==1){
+       
+        Boolean terminar = false;
+        while (terminar ==false){
+            String Nv11 = colaNv1.PrintCola();
             System.out.println(Nv11);
             IA ia = new IA();
-            ia.resultado(colaNv1);
+            
+            if (colaNv1.esVacia() == false){
+                ia.resultado(colaNv1,refuerzo);
+            }else{
+                if (colaNv2.esVacia() == false){
+                    ia.resultado(colaNv2,refuerzo);
+                }else{
+                    if(colaNv3.esVacia() == false){
+                        ia.resultado(colaNv3,refuerzo);
+                    }else{
+                        System.out.println("Se acabo");
+                        terminar = true;
+                    }
+                }
+            }
+            
 
-            String Nv1 = colaNv1.PrintCola();
+            String Nv1 = refuerzo.PrintCola();
             System.out.println(Nv1);
-            String Nv2 = colaNv2.PrintCola();
-            System.out.println(Nv2);
-            String Nv3 = colaNv3.PrintCola();
-            System.out.println(Nv3);
-            System.out.println(" ");
+            
+            
             TimeUnit.MILLISECONDS.sleep(2000);
             
         }

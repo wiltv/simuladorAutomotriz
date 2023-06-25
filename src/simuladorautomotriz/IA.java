@@ -13,7 +13,7 @@ public class IA {
     public int[] ganadores = new int[10];
     public volatile int count = 0;
     
-    public void resultado(Cola cola){
+    public void resultado(Cola cola, Cola refuerzo){
            Vehiculo vehiculo = cola.Desencolar();
            
            Random random = new Random(); 
@@ -29,9 +29,14 @@ public class IA {
                System.out.println("Empato");
            }else{
                System.out.println("Pospuesto");
+               refuerzo.Encolar(vehiculo);
+               String r = refuerzo.PrintCola();
+               System.out.println(r);
                
            }
            
            
     }
+    
+    
 }
