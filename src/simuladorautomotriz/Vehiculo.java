@@ -19,11 +19,11 @@ public class Vehiculo {
         int prioridad = 0;
         Random random = new Random(); 
         int carroceria = random.nextInt(100); 
-        if (carroceria>=60){ //Carroceria
+        if (carroceria>=40){ //Carroceria
             prioridad++;
         }
         int chasis = random.nextInt(100); 
-        if (chasis>=70){ //Chasis
+        if (chasis>=30){ //Chasis
             prioridad++;
         }
         int motor = random.nextInt(100); 
@@ -31,7 +31,7 @@ public class Vehiculo {
             prioridad++;
         }
         int rueda = random.nextInt(100); 
-        if (rueda>=40){ //Rueda
+        if (rueda>=60){ //Rueda
             prioridad++;
         }
         
